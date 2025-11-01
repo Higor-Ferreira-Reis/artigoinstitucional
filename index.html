@@ -6,6 +6,16 @@
   <meta name="author" content="Artigo Institucional">
   <meta name="description" content="Artigo Institucional — Templates profissionais para sites institucionais. Mostre sua empresa, portfólio e facilite contato via WhatsApp.">
   <title>Artigo Institucional</title>
+  <script>
+    // Aplica tema ANTES de qualquer renderização para evitar flash
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+        document.body.classList.add('dark-theme');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
   <!-- Ícone de atalho (opcional) -->
   <link rel="icon" href="data:,"><!-- substitua pelo seu favicon -->
@@ -13,42 +23,283 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <img src="/images/artigo assinado.png" alt="">
+      <img src="/images/artigo assinado.png" alt="Artigo Institucional">
       <nav class="nav">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="#portfolio">Portfólio</a>
         <a href="https://wa.me/5561992572892" class="cta">Contato</a>
       </nav>
-      <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero Reformulado -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Transforme a presença online da sua empresa com um site institucional moderno.</h1>
-          <p class="lead">Seja o melhor exemplo de presença online: mostre sua empresa, facilite contatos e converta interessados em clientes com um site profissional.</p>
-
-          <ul class="hero-features">
-            <li>Informações claras sobre a empresa</li>
-            <li>Contato direto (WhatsApp, e‑mail, telefone)</li>
-            <li>Portfólio e exemplos de produtos</li>
-            <li>Design responsivo e acessível</li>
-          </ul>
-
-          <div class="hero-actions">
-            <!-- Substitua o número abaixo pelo seu WhatsApp no formato internacional sem sinais: 55 + ddd + número -->
-            <a href="https://wa.me/5561992572892" class="btn primary" target="_blank" rel="noopener noreferrer">Pedir cotação via WhatsApp</a>
-            <a href="#portfolio" class="btn outline">Ver portfólio</a>
+      <div class="container hero-grid-reform">
+        <div class="hero-logo-animated">
+          <div class="logo-signature">
+            <img src="/images/artigo assinado.png" alt="Artigo Institucional" class="logo-drawing" id="logoDrawing">
           </div>
+          <div class="signature-line"></div>
         </div>
 
-        <div class="hero-image" aria-hidden="true">
-          <!-- Imagem ilustrativa - substitua pelo seu mockup/portfolio -->
-          <img src="/images/abstract-55.jpg" alt="Preview do template">
+        <div class="hero-text-right">
+          <h1>Transforme a presença online da sua empresa<br><span class="highlight-text">com a assinatura técnica da Artigo</span></h1>
+          <p class="lead">Sites institucionais desenvolvidos por especialistas em performance, design e otimização.</p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/5561992572892" class="btn primary hero-cta" target="_blank" rel="noopener noreferrer">
+              <span>Faça um Orçamento</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-background-animation"></div>
+    </section>
+
+    <!-- CTA Principal -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Tenha seu site institucional em até 2 dias.</h2>
+          <p class="cta-subtitle">Rapidez, profissionalismo e resultados que sua empresa merece.</p>
+          <div class="cta-buttons">
+            <a href="https://wa.me/5561992572892" class="btn cta-primary" target="_blank" rel="noopener noreferrer">
+              Solicitar orçamento via WhatsApp
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feito por Programadores de Alto Nível -->
+    <section class="experts-section">
+      <div class="container">
+        <div class="experts-content">
+          <div class="experts-text">
+            <h2>Feito por programadores de alto nível</h2>
+            <p class="experts-subtitle">Nossa equipe é formada por desenvolvedores experientes, especializados em criar sites institucionais de alto desempenho, com foco em velocidade, segurança, SEO e experiência do usuário.</p>
+            <p class="experts-body">Cada projeto é construído com atenção ao detalhe, desde o código até o design responsivo. Utilizamos as melhores práticas de performance e otimização para garantir que o seu site carregue rapidamente, seja bem ranqueado no Google e transmita profissionalismo em cada pixel.</p>
+            <p class="experts-tagline">Artigo não é apenas um template — é uma assinatura de qualidade técnica.</p>
+          </div>
+
+          <div class="experts-visual">
+            <div class="expert-features">
+              <div class="expert-feature">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                </div>
+                <h3>Performance</h3>
+                <p>Carregamento ultrarrápido</p>
+              </div>
+
+              <div class="expert-feature">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <h3>SEO</h3>
+                <p>Otimização para buscas</p>
+              </div>
+
+              <div class="expert-feature">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <h3>Segurança</h3>
+                <p>Proteção de dados</p>
+              </div>
+
+              <div class="expert-feature">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3>Responsividade</h3>
+                <p>Perfeito em todos os dispositivos</p>
+              </div>
+            </div>
+
+            <div class="performance-chart">
+              <div class="chart-header">
+                <h3>Carregamento Otimizado</h3>
+                <span class="chart-percentage" id="performancePercent">0%</span>
+              </div>
+              <div class="chart-bar">
+                <div class="chart-fill" id="chartFill"></div>
+              </div>
+              <p class="chart-label">98% Performance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estatísticas / Benefícios -->
+    <section class="stats-section">
+      <div class="container">
+        <h2 class="stats-title">Por que investir em um site institucional?</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">
+              <h3>Empresas com site institucional lucram <span class="stat-highlight">47% mais</span></h3>
+            </div>
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar" data-progress="47">
+                <div class="progress-fill"></div>
+                <span class="progress-text">47%</span>
+              </div>
+            </div>
+            <p class="stat-description">Dados baseados em estudos de mercado sobre presença digital.</p>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <h3>Empresas com site institucional são vistas <span class="stat-highlight">78% mais online</span></h3>
+            </div>
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar" data-progress="78">
+                <div class="progress-fill"></div>
+                <span class="progress-text">78%</span>
+              </div>
+            </div>
+            <p class="stat-description">Maior visibilidade e credibilidade geram mais oportunidades de negócio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section id="como-funciona" class="how-it-works">
+      <div class="container">
+        <h2>Como funciona</h2>
+        <p class="section-subtitle">Processo simples, transparente e rápido para criar seu site institucional</p>
+        
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Você entra em contato</h3>
+              <p>Entre em contato conosco via WhatsApp ou formulário. Respondemos rapidamente para entender suas necessidades.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Informações sobre sua empresa</h3>
+              <p>Você nos conta sobre a empresa: missão, valores, produtos e serviços. Quanto mais detalhes, melhor o resultado.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Manual de identidade visual (se tiver)</h3>
+              <p>Se você já tem manual de marca com cores, logotipo e tipografia, envie para nós. Usaremos tudo isso no design.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Criamos sua identidade (se não tiver)</h3>
+              <p>Não tem manual de marca? Sem problema! Nós criamos sua identidade visual completa do zero, com base no nome e estilo da sua marca.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3>Desenvolvimento e entrega</h3>
+              <p>Desenvolvemos seu site institucional profissional e entregamos em até <strong>2 dias úteis</strong>. Pronto para uso!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Identidade Visual -->
+    <section class="identity-section">
+      <div class="container">
+        <div class="identity-content">
+          <div class="identity-text">
+            <h2>Não tem manual de marca? Sem problema.</h2>
+            <p class="identity-subtitle">Nós criamos sua identidade visual completa do zero.</p>
+            <p class="identity-description">Desenvolvemos combinações profissionais de cores, tipografias modernas e layouts institucionais que transmitem credibilidade e profissionalismo. Tudo personalizado para sua marca.</p>
+            <ul class="identity-features">
+              <li>Paleta de cores profissional</li>
+              <li>Tipografia moderna e legível</li>
+              <li>Logotipo otimizado para web</li>
+              <li>Guia de uso da marca</li>
+            </ul>
+          </div>
+          <div class="identity-examples">
+            <div class="color-palette">
+              <h4>Exemplos de paletas profissionais</h4>
+              <div class="palette-grid">
+                <div class="palette-item">
+                  <div class="palette-colors">
+                    <div class="color-box" style="background: #0b61ff;"></div>
+                    <div class="color-box" style="background: #2563eb;"></div>
+                    <div class="color-box" style="background: #1e40af;"></div>
+                    <div class="color-box" style="background: #334155;"></div>
+                  </div>
+                  <p class="palette-name">Azul Corporativo</p>
+                </div>
+                <div class="palette-item">
+                  <div class="palette-colors">
+                    <div class="color-box" style="background: #059669;"></div>
+                    <div class="color-box" style="background: #10b981;"></div>
+                    <div class="color-box" style="background: #047857;"></div>
+                    <div class="color-box" style="background: #1f2937;"></div>
+                  </div>
+                  <p class="palette-name">Verde Empresarial</p>
+                </div>
+                <div class="palette-item">
+                  <div class="palette-colors">
+                    <div class="color-box" style="background: #dc2626;"></div>
+                    <div class="color-box" style="background: #ef4444;"></div>
+                    <div class="color-box" style="background: #991b1b;"></div>
+                    <div class="color-box" style="background: #374151;"></div>
+                  </div>
+                  <p class="palette-name">Vermelho Impactante</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -211,6 +462,128 @@
         });
       }
     }
+
+    // Tema Claro/Escuro - Versão Simplificada e Funcional
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const body = document.body;
+      const html = document.documentElement;
+      
+      // Aplica tema imediatamente ao carregar
+      if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+        html.classList.add('dark-theme');
+      }
+      
+      // Alterna tema ao clicar no botão
+      const themeToggle = document.getElementById('themeToggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          const isDark = body.classList.contains('dark-theme');
+          
+          if (isDark) {
+            body.classList.remove('dark-theme');
+            html.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+          } else {
+            body.classList.add('dark-theme');
+            html.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+          }
+        });
+      }
+    })();
+
+    // Animação das barras de progresso
+    const observerOptions = {
+      threshold: 0.3,
+      rootMargin: '0px'
+    };
+
+    const progressObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progressBar = entry.target;
+          const progress = progressBar.dataset.progress;
+          const fill = progressBar.querySelector('.progress-fill');
+          const text = progressBar.querySelector('.progress-text');
+          
+          setTimeout(() => {
+            if (fill) {
+              fill.style.width = progress + '%';
+            }
+            if (text) {
+              text.style.opacity = '1';
+            }
+          }, 200);
+          
+          progressObserver.unobserve(progressBar);
+        }
+      });
+    }, observerOptions);
+
+    // Observa todas as barras de progresso
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+      progressObserver.observe(bar);
+    });
+
+    // Animação da Logo (assinatura sendo desenhada)
+    const logoDrawing = document.getElementById('logoDrawing');
+    if (logoDrawing) {
+      logoDrawing.style.opacity = '0';
+      logoDrawing.style.transform = 'scale(0.8)';
+      
+      setTimeout(() => {
+        logoDrawing.style.transition = 'opacity 1s ease, transform 1s ease';
+        logoDrawing.style.opacity = '1';
+        logoDrawing.style.transform = 'scale(1)';
+      }, 300);
+    }
+
+    // Animação da linha de assinatura
+    const signatureLine = document.querySelector('.signature-line');
+    if (signatureLine) {
+      setTimeout(() => {
+        signatureLine.style.width = '100%';
+      }, 1000);
+    }
+
+    // Animação do gráfico de performance
+    const chartFill = document.getElementById('chartFill');
+    const performancePercent = document.getElementById('performancePercent');
+    
+    if (chartFill && performancePercent) {
+      const chartObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            let currentPercent = 0;
+            const targetPercent = 98;
+            const duration = 2000;
+            const increment = targetPercent / (duration / 16);
+            
+            const timer = setInterval(() => {
+              currentPercent += increment;
+              if (currentPercent >= targetPercent) {
+                currentPercent = targetPercent;
+                clearInterval(timer);
+              }
+              chartFill.style.width = currentPercent + '%';
+              performancePercent.textContent = Math.round(currentPercent) + '%';
+            }, 16);
+            
+            chartObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      chartObserver.observe(chartFill.parentElement);
+    }
+    
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.onkeydown = e => {
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) e.preventDefault();
+    };
+
   </script>
 </body>
 </html>
